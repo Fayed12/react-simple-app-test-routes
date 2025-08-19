@@ -1,7 +1,11 @@
-import "./footer.css"
+import "./footer.css";
 
 function Footer() {
-    return ( <h1>footer side </h1> );
+  return (
+    <footer className="footer">
+      <p>© {new Date().getFullYear()} My App. All rights reserved.</p>
+    </footer>
+  );
 }
 
 export default Footer;

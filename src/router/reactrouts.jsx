@@ -3,11 +3,23 @@ import Home from "../pages/home-page/home";
 import Contact from "../pages/contact/contact";
 import MainLayout from "../layout/loggedinaLyout";
 import { createBrowserRouter } from "react-router";
+import ErrorPage from "../pages/error-page/errorPage";
+import LoginPage from "../pages/login-page/login";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout>,
+    element: <LoginPage></LoginPage>,
+    errorElement: <ErrorPage></ErrorPage>,
+  },
+  {
+    element: (
+      <ProtectedRoute>
+        <MainLayout></MainLayout>
+      </ProtectedRoute>
+    ),
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       { index: true, element: <Home></Home> },
       { path: "/about", element: <About></About> },

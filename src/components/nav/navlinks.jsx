@@ -1,35 +1,27 @@
-import "./navlinks.css"
-import { NavLink } from "react-router";
+import "./navlinks.css";
+import { NavLink } from "react-router"; 
 
 function NavLinks() {
-    return (
-      <>
-        <div className="header">
-          <div className="nav">
-            <div className="logo">
-              <span>welcome</span>
-            </div>
-            <div className="links">
-              <NavLink to="/">
-                <span className="display-block m-[10px] cursor-pointer">
-                  Home
-                </span>
-              </NavLink>
-              <NavLink to="/about">
-                <span className="display-block m-[10px] cursor-pointer">
-                  About
-                </span>
-              </NavLink>
-              <NavLink to="/contact">
-                <span className="display-block m-[10px] cursor-pointer">
-                  Contact
-                </span>
-              </NavLink>
-            </div>
-          </div>
+  return (
+    <header className="header">
+      <nav className="nav">
+        <div className="logo">
+          <span>Welcome</span>
         </div>
-      </>
-    );
+        <div className="links">
+          <NavLink to="/" className="nav-link">
+            Home
+          </NavLink>
+          <NavLink to="/about" className="nav-link">
+            About
+          </NavLink>
+          <NavLink to="/contact" className="nav-link">
+            Contact
+          </NavLink>
+        </div>
+      </nav>
+    </header>
+  );
 }
 
 export default NavLinks;

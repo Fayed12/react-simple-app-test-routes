@@ -4,9 +4,13 @@ import { userContext } from "../../context/usercontext";
 import { loginContext } from "../../context/logincontext";
 import FailedLogin from "../../components/faildlogin/faild-login";
 import SuccessLogin from "../../components/success/loginsucces";
+
+import {useNavigate } from "react-router";
 import "./login.css";
 
 function LoginPage() {
+  const navigate = useNavigate();
+
   const defaultUser = { username: "m", Password: "1", email: "m" };
 
   const { userData, setUserData } = useContext(userContext);
@@ -20,11 +24,14 @@ function LoginPage() {
       defaultUser.email === userData.email
     ) {
       setLoginStatus("success");
+      setTimeout(() => {
+        navigate("/", { replace: true });
+      } , 2000)
     } else {
       setLoginStatus("failed");
     }
   }
-  
+
   return (
     <div className="form-container">
       <h2 className="form-title">Login</h2>
