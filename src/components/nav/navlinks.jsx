@@ -15,6 +15,9 @@ function NavLinks() {
           <NavLink to="/about" className="nav-link">
             About
           </NavLink>
+          <NavLink to="/products" className="nav-link">
+            Products
+          </NavLink>
           <NavLink to="/contact" className="nav-link">
             Contact
           </NavLink>

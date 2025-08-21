@@ -6,6 +6,9 @@ import { createBrowserRouter } from "react-router";
 import ErrorPage from "../pages/error-page/errorPage";
 import LoginPage from "../pages/login-page/login";
 import ProtectedRoute from "../components/ProtectedRoute";
+import Products from "../pages/products/products";
+import productsLoader from "../loaders/productsLoader";
+import ProductDetails from "../components/productDetails";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +27,18 @@ const router = createBrowserRouter([
       { index: true, element: <Home></Home> },
       { path: "/about", element: <About></About> },
       { path: "/contact", element: <Contact></Contact> },
+      {
+        id:"rootproducts",
+        path: "/products",
+        element: <Products></Products>,
+        loader: productsLoader,
+        children: [
+          {
+            path: "productdetails/:id",
+            element: <ProductDetails></ProductDetails>,
+          },
+        ],
+      },
     ],
   },
 ]);
