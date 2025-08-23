@@ -5,84 +5,96 @@
             "name": "Laptop Pro 15",
             "price": 1500,
             "category": "Electronics",
-            "inStock": true
+            "inStock": true,
+            "description": "High-performance 15-inch laptop designed for professionals with fast processing power."
         },
         {
             "id": 2,
             "name": "Wireless Headphones",
             "price": 200,
             "category": "Electronics",
-            "inStock": true
+            "inStock": true,
+            "description": "Noise-cancelling wireless headphones with long battery life and deep bass."
         },
         {
             "id": 3,
             "name": "Smartphone X",
             "price": 999,
             "category": "Electronics",
-            "inStock": true
+            "inStock": true,
+            "description": "Latest generation smartphone with high-resolution display and powerful camera."
         },
         {
             "id": 4,
             "name": "Gaming Mouse",
             "price": 80,
             "category": "Electronics",
-            "inStock": true
+            "inStock": true,
+            "description": "Ergonomic gaming mouse with customizable DPI and RGB lighting."
         },
         {
             "id": 5,
             "name": "Book: React Basics",
             "price": 45,
             "category": "Books",
-            "inStock": true
+            "inStock": true,
+            "description": "Beginner-friendly book that introduces the fundamentals of React development."
         },
         {
             "id": 6,
             "name": "Book: Advanced JavaScript",
             "price": 60,
             "category": "Books",
-            "inStock": true
+            "inStock": true,
+            "description": "Comprehensive guide to mastering advanced JavaScript concepts and patterns."
         },
         {
             "id": 7,
             "name": "Office Chair",
             "price": 300,
             "category": "Furniture",
-            "inStock": false
+            "inStock": false,
+            "description": "Ergonomic office chair with lumbar support for long working hours."
         },
         {
             "id": 8,
             "name": "Standing Desk",
             "price": 550,
             "category": "Furniture",
-            "inStock": true
+            "inStock": true,
+            "description": "Adjustable standing desk designed to improve posture and productivity."
         },
         {
             "id": 9,
             "name": "T-Shirt Blue",
             "price": 25,
             "category": "Clothing",
-            "inStock": true
+            "inStock": true,
+            "description": "Comfortable cotton t-shirt in blue color, perfect for everyday wear."
         },
         {
             "id": 10,
             "name": "Jeans Black",
             "price": 40,
             "category": "Clothing",
-            "inStock": true
+            "inStock": true,
+            "description": "Classic black jeans with a modern slim fit design."
         },
         {
             "id": 11,
             "name": "Coffee Mug",
             "price": 15,
             "category": "Home",
-            "inStock": true
+            "inStock": true,
+            "description": "Durable ceramic coffee mug with a stylish design."
         },
         {
             "id": 12,
             "name": "Table Lamp",
             "price": 35,
             "category": "Home",
-            "inStock": true
+            "inStock": true,
+            "description": "Modern table lamp with warm light for cozy home atmosphere."
         }
     ]
 }

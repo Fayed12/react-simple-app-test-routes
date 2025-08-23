@@ -1,173 +1,149 @@
+/* products.css */
 .products-container {
-  padding: 20px;
-  max-width: 1200px;
-  height: calc(100vh - 60px);
-  margin: auto;
-  font-family: Arial, sans-serif;
-  position: relative;
+  padding: 80px 20px;
+  background: #fdfcfb;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #4b3d2a;
 }
 
+/* Header */
 .products-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .products-title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2rem;
-  color: #333;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3c2f21;
+  margin-bottom: 15px;
 }
 
 .input-container {
   display: flex;
   justify-content: center;
-  align-items: center; 
 }
 
-.inputsearch{
-  border: 1px solid #999;
-  padding: 5px 10px;
-  border-radius: 10px;
+.inputsearch {
+  padding: 12px 18px;
+  width: 280px;
+  border-radius: 25px;
+  border: 2px solid #c9b8a3;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
+@media (width <= 500px) {
+  .products-title {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  .inputsearch {
+    padding: 10px 15px;
+    width: 230px;
+    border-radius: 20px;
+  }
+}
+
+.inputsearch:focus {
+  border-color: #8b6b4f;
+  box-shadow: 0 0 8px rgba(139, 107, 79, 0.3);
+}
+
+/* Grid Layout */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit , minmax(380px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Product Card */
 .product-card {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  background-color: #fff;
-  transition: transform 0.2s, box-shadow 0.2s;
-  position: relative;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .product-name {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  color: #222;
-  border-bottom: 1px solid #999;
-  padding-bottom: 6px;
-  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #5a4633;
+  margin-bottom: 10px;
+  text-align: center; 
 }
 
-.product-category,
-.product-price,
-.product-stock {
-  margin: 4px 0;
-  color: #555;
-  font-size: 0.95rem;
+.product-desc span{
+  color: #999;
 }
 
-.in-stock {
-  color: green;
-  font-weight: bold;
-}
-
-.out-of-stock {
-  color: red;
-  font-weight: bold;
-}
-
-.details{
+.details {
   display: flex;
-  justify-content: right;
-  align-items: center;
+  justify-content: flex-end;
 }
 
-.details span{
-  font-size: 12px;
+.details span {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #8b6b4f;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: .4;
-  text-decoration: underline;
+  transition: background 0.3s ease;
 }
 
-.details span:hover{
-  color: rgb(60, 60, 203)
+.details span:hover {
+  background: #6a503b;
 }
 
-/* outlet */
 
+/* Details Overlay */
 .detailsOverlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* خلفية شفافة */
+  background: rgba(60, 47, 33, 0.7);
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 1000; /* فوق باقي العناصر */
-  animation: fadeIn 0.3s ease-in-out;
+  justify-content: center;
+  z-index: 2000;
 }
 
 .details-content {
   background: #fff;
-  border-radius: 16px;
   padding: 30px;
+  border-radius: 20px;
   width: 90%;
   max-width: 600px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  position: relative;
-  animation: scaleUp 0.3s ease-in-out;
-  font-family: Arial, sans-serif;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.details-content h2 {
-  margin-bottom: 15px;
-  font-size: 1.8rem;
-  color: #333;
+.details-content .colse-button{
+  display: flex;
+  justify-content: flex-end;
 }
 
-.details-content p {
-  margin-bottom: 10px;
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.5;
+.colse-button button {
+   background-color: #8b6b4f;
+   color: white;
+   padding: 5px 10px;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: .4s;
+   width: fit-content;
 }
 
-/* زرار إغلاق */
-.products-details .colse {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  background: #ff4d4f;
-  border: none;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  transition: background 0.2s;
-}
-
-.products-details .colse {
-  background: #d9363e;
-}
-
-.colse button{
-  cursor: pointer;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes scaleUp {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+.colse-button button:hover{
+  background-color: #755a43;
 }

@@ -11,7 +11,7 @@ function ProductDetails() {
   const dataFromParent = useRouteLoaderData("rootproducts");
   const navigate = useNavigate();
 
-  const product = dataFromParent.find((p) => p.id == id);
+  const product = dataFromParent.products.find((p) => p.id == id);
 
   if (!product) {
     return <h2>Product not found ❌</h2>;
@@ -28,6 +28,9 @@ function ProductDetails() {
           <h2 className="product-name">{product.name}</h2>
           <p className="product-category">Category: {product.category}</p>
           <p className="product-price">Price: ${product.price}</p>
+          <p className="product-desc">
+            description: <span>{product.description}</span>
+          </p>
           <p
             className={`product-stock ${
               product.inStock ? "in-stock" : "out-of-stock"
@@ -35,7 +38,7 @@ function ProductDetails() {
           >
             {product.inStock ? "In Stock ✅" : "Out of Stock ❌"}
           </p>
-          <div className="colse">
+          <div className="colse-button">
             <button onClick={handleClose}>close</button>
           </div>
         </div>

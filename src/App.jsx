@@ -1,4 +1,3 @@
-import './App.css'
 import router from './router/reactrouts';
 import {RouterProvider } from 'react-router';
 

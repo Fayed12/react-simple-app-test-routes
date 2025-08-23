@@ -25,6 +25,7 @@
 }
 
 .popup-close-fail {
+  margin: 0;
   position: absolute;
   top: 12px;
   right: 15px;
@@ -36,9 +37,10 @@
   border-radius: 50%;
   width: 28px;
   height: 28px;
-  line-height: 28px;
-  text-align: center;
   transition: background 0.2s ease, color 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .popup-close-fail:hover {

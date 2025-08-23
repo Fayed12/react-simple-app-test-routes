@@ -6,7 +6,7 @@ function NavLinks() {
     <header className="header">
       <nav className="nav">
         <div className="logo">
-          <span>Welcome</span>
+          <span>vercel</span>
         </div>
         <div className="links">
           <NavLink to="/" className="nav-link">

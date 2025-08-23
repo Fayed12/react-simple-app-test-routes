@@ -1,41 +1,92 @@
-.home-container {
+body,
+html {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #FAF9F6;
+  height: 100%;
+}
+
+.welcome {
+  position: relative;
+  height: 100vh;
+  background: url("/images/welcome-bg.jpg") center/cover no-repeat;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: calc(100vh - 60px);
-  background: linear-gradient(135deg, #f0f4ff, #e0e7ff);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.home-card {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
+  justify-content: center;
   text-align: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
+  color: #fff;
 }
 
-.home-username {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #374151;
-  margin-bottom: 15px;
+.welcome .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.316);
 }
 
-.home-username span {
-  font-weight: bold;
-  color: #1e40af;
+.welcome .content {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+  padding: 20px;
 }
 
-.home-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #1e40af;
+.welcome h1 {
+  font-size: 3rem;
   margin-bottom: 20px;
 }
 
-.home-text {
+.welcome p {
   font-size: 1.2rem;
-  color: #555;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn.primary {
+  background: #ffb703;
+  color: #333;
+}
+
+.btn.primary:hover {
+  background: #faa307;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (width <= 500px) {
+  .welcome h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .welcome p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .btn {
+    padding: 10px 15px;
+    font-size: .7rem;
+    font-weight: 400;
+  }
 }

@@ -1,7 +1,9 @@
 import { StrictMode , useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+// eslint-disable-next-line no-unused-vars
 import { loginContext } from './context/logincontext.jsx'
+// eslint-disable-next-line no-unused-vars
 import { userContext } from './context/usercontext.jsx'
 import App from './App.jsx'
 

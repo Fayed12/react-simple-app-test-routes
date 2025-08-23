@@ -12,34 +12,35 @@ import ProductDetails from "../components/productDetails";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <LoginPage></LoginPage>,
-    errorElement: <ErrorPage></ErrorPage>,
+    path: "/login",
+    element: <LoginPage />,
+    errorElement: <ErrorPage />,
   },
   {
     element: (
       <ProtectedRoute>
-        <MainLayout></MainLayout>
+        <MainLayout />
       </ProtectedRoute>
     ),
-    errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <Home></Home> },
-      { path: "/about", element: <About></About> },
-      { path: "/contact", element: <Contact></Contact> },
+      { index: true, element: <Home /> },
+      { path: "/about", element: <About /> },
+      { path: "/contact", element: <Contact /> },
       {
-        id:"rootproducts",
+        id: "rootproducts",
         path: "/products",
-        element: <Products></Products>,
+        element: <Products />,
         loader: productsLoader,
         children: [
           {
             path: "productdetails/:id",
-            element: <ProductDetails></ProductDetails>,
+            element: <ProductDetails />,
           },
         ],
       },
     ],
   },
 ]);
+
 export default router;

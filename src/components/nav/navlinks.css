@@ -1,20 +1,29 @@
-/* ---------- Navbar container ---------- */
 .header {
-  background-color: #1e40af; /* أزرق غامق */
+  background-color: #7d776ba5;
+  backdrop-filter: blur(3px);
   padding: 12px 20px;
   color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   height:60px ;
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+  z-index: 1000;
 }
 
-/* ---------- Flex layout ---------- */
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* ---------- Logo ---------- */
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .logo span {
   font-size: 22px;
   font-weight: bold;
@@ -22,7 +31,6 @@
   cursor: pointer;
 }
 
-/* ---------- Links ---------- */
 .links {
   display: flex;
   gap: 20px;
@@ -37,13 +45,25 @@
   padding-bottom: 2px;
 }
 
-/* Hover & Active state */
 .nav-link:hover {
-  color: #93c5fd; /* أزرق فاتح */
-  border-bottom: 2px solid #93c5fd;
+  color: #524738; 
+  border-bottom: 2px solid #524738;
 }
 
 .nav-link.active {
-  color: #facc15; /* أصفر */
+  color: #facc15;
   border-bottom: 2px solid #facc15;
+}
+
+@media (width <= 500px) {
+  .logo span {
+    font-size: 18px;
+  }
+  .links {
+    gap: 10px;
+  }
+  .nav-link {
+    font-size: 13px;
+    font-weight: 300;
+  }
 }

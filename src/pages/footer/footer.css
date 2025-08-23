@@ -3,16 +3,24 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #1e40af;
+  height: 50px;
+  background-color: #7d776ba5;
+  backdrop-filter: blur(3px);
   color: #fff;
-  text-align: center;
   padding: 12px 0;
   font-size: 14px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer p {
   margin: 0;
   letter-spacing: 0.5px;
+}
+
+.footer span{
+  color: rgb(235, 223, 198);
 }

@@ -11,7 +11,7 @@ function Products() {
 
   const title = searchParams.get("title") || "";
 
-  const filtered = productsDataJsonFromLoader.filter((p) =>
+  const filtered = productsDataJsonFromLoader.products.filter((p) =>
     p.name.toLowerCase().includes(title.toLowerCase())
   );
 

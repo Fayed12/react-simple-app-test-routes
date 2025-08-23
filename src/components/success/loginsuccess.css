@@ -26,24 +26,27 @@
 
 .popup-close {
   position: absolute;
-  top: 12px;
+  top: 15px;
   right: 15px;
-  background: #f1f1f1;
+  background: #f0fff4;
   border: none;
   font-size: 18px;
   cursor: pointer;
-  color: #666;
+  color: #296549;
   border-radius: 50%;
   width: 28px;
   height: 28px;
   line-height: 28px;
   text-align: center;
   transition: background 0.2s ease, color 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .popup-close:hover {
-  background: #e0e0e0;
-  color: #000;
+  background: #e1f7e6;
+  color: #1e4935;
 }
 
 .success-title {

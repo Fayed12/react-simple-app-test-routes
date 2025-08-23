@@ -2,20 +2,27 @@ import { useContext } from "react";
 import { userContext } from "../../context/usercontext";
 import "./loginsuccess.css";
 
+// eslint-disable-next-line no-unused-vars
 function SuccessLogin({ onClose }) {
-  const user = useContext(userContext);
+  const { userData } = useContext(userContext);
 
   return (
     <div className="popup-overlay">
       <div className="popup-box">
-        <button className="popup-close" onClick={onClose}>
+        {/* <button className="popup-close" onClick={onClose}>
           ✖
-        </button>
+        </button> */}
         <h2 className="success-title">Login Successful!</h2>
         <p className="success-text">
-          Welcome, <span className="username">{user?.username}</span>
+          Welcome, <span className="username">{userData?.username}</span>
         </p>
-        <p className="success-text">Your email: {user?.email}</p>
+        <p className="success-text">Your email: {userData?.email}</p>
+        <p
+          className="success-text"
+          style={{ fontSize: "20px", fontWeight: "500" }}
+        >
+          please wait !
+        </p>
       </div>
     </div>
   );
