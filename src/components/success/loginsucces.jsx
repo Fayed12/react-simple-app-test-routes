@@ -17,12 +17,6 @@ function SuccessLogin({ onClose }) {
           Welcome, <span className="username">{userData?.username}</span>
         </p>
         <p className="success-text">Your email: {userData?.email}</p>
-        <p
-          className="success-text"
-          style={{ fontSize: "20px", fontWeight: "500" }}
-        >
-          please wait !
-        </p>
       </div>
     </div>
   );

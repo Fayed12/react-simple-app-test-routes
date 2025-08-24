@@ -7,6 +7,7 @@ import SuccessLogin from "../../components/success/loginsucces";
 import { useNavigate } from "react-router";
 import MissValue from "../../components/missValue/missValue";
 import { useState } from "react";
+import LoadingPage from "../../components/loading/loading";
 import "./login.css";
 
 function LoginPage() {
@@ -21,6 +22,7 @@ function LoginPage() {
   const { userData, setUserData } = useContext(userContext);
   const { loginStatus, setLoginStatus } = useContext(loginContext);
   const [missingValue, setMissingValue] = useState(false);
+  const [loadingSatuts , setLoadingSatuts] = useState(false)
 
   // regular expression
   const regName = /^([A-Z][a-z]+)(\s[A-Z][a-z]+)*$/g;
@@ -61,8 +63,13 @@ function LoginPage() {
     ) {
       setLoginStatus("success");
       setTimeout(() => {
+        setLoadingSatuts(true);
+      }, 2000)
+      
+      setTimeout(() => {
+        setLoadingSatuts(false)
         navigate("/", { replace: true });
-      }, 2000);
+      }, 5000);
     } else {
       setLoginStatus("failed");
     }
@@ -133,9 +140,15 @@ function LoginPage() {
               Submit
             </button>
 
+            {/* login success and loading page*/}
             {loginStatus === "success" && (
-              <SuccessLogin onClose={() => setLoginStatus(null)} />
+              <div>
+                <SuccessLogin onClose={() => setLoginStatus(null)} />
+                {loadingSatuts && <LoadingPage></LoadingPage>}
+              </div>
             )}
+
+            {/* login failed */}
             {loginStatus === "failed" && (
               <FailedLogin onClose={() => setLoginStatus(null)} />
             )}

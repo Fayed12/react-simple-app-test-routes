@@ -1,13 +1,29 @@
 import "./contact.css";
 import { useState } from "react";
+import MessageSuccess from "../../components/messages/messageSuccess";
+import MissValue from "../../components/missValue/missValue";
+import { useNavigate } from "react-router";
 
 function Contact() {
+  const navigate = useNavigate()
   const [userContactData, setUserContactData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [messageStatus , setMessageStatus] = useState(false)
+  const [messageStatus, setMessageStatus] = useState(null)
+  
+  function handleSetMessageToNull() {
+    setTimeout(() => {
+      setMessageStatus(null);
+    }, 4000);
+  }
+
+  function redirectTheUserToHomePage() {
+    setTimeout(() => {
+      navigate("/" , {replace:true})
+    } , 4000)
+  }
 
   // function to handle the message send or not and submit
   function handleSubmitingButton(e) {
@@ -17,13 +33,21 @@ function Contact() {
       !userContactData.email ||
       !userContactData.message
     ) {
-      // create faile component by messageStatus
-      setMessageStatus(true);
-      alert("fill all");
+      setMessageStatus("missValue");
+      handleSetMessageToNull();
     } else {
-      // create success component
-      setMessageStatus(false)
-      alert("success")
+      setMessageStatus("sendSuccess")
+      handleSetMessageToNull();
+      redirectTheUserToHomePage();
+    }
+  }
+
+  // failed or success message component
+  function MessageSend() {
+    if (messageStatus === "missValue") {
+      return(<MissValue></MissValue>)
+    } else if (messageStatus === "sendSuccess") {
+      return<MessageSuccess></MessageSuccess>
     }
   }
 
@@ -61,6 +85,7 @@ function Contact() {
           }
         ></textarea>
         <button>Send Message</button>
+        <MessageSend></MessageSend>
       </form>
     </div>
   );
