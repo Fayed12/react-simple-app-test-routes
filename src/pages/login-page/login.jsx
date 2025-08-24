@@ -45,10 +45,10 @@ function LoginPage() {
   // and return false to enter the next condition
   function handleRegex() {
     if (!regName.test(userData.username)){
-      alert("Please enter a valid email address (e.g., Jone Doe)");
+      alert("Please enter a valid name (e.g., Jone Doe)");
       return true;
     } else if(!regEmail.test(userData.email)){
-      alert("please enter correct emailPlease enter a valid email address (e.g., user@example.com)");
+      alert("Please enter a valid email address (e.g., user@example.com)");
       return true;
     }
     return false;
