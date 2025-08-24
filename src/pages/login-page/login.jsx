@@ -99,7 +99,10 @@ function LoginPage() {
     <div className="form-container">
       <div className="form-wrapper">
         <div className="form-image">
-          <h1 className="form-title">login</h1>
+          <div className="welcome-message">
+            <h1 className="form-title">Welcome back</h1>
+            <h2 className="form-sub-title">we missed you</h2>
+          </div>
           <div className="title-overlay"></div>
         </div>
         <div className="form-content">

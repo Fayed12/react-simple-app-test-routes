@@ -47,15 +47,22 @@
   justify-content: center;
 }
 
-.form-title {
-  font-size: 5rem;
+.form-title ,
+.form-sub-title{
+  font-size: 3rem;
   text-shadow: 0 0 15px #3c2f21;
   font-weight: bold;
-  color: #3c2f21;
+  color: #c9a783;
   margin-bottom: 25px;
   text-align: center;
   position: relative;
   z-index: 100;
+  display: block;
+}
+
+.form-sub-title{
+  font-size: 2rem;
+  color: #9d8265;
 }
 
 .form-title-2{
@@ -67,7 +74,7 @@
   text-align: center;
   position: relative;
   z-index: 100;
-  display: none;
+  display: block;
 }
 
 .form-content form{
